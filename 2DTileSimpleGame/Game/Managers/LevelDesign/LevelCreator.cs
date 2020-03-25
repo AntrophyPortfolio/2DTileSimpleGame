@@ -44,14 +44,17 @@ namespace _2DTileSimpleGame.GameLogic
                 }
             }
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream fs = new FileStream($"{fileName}.dat", FileMode.Create, FileAccess.Write);
-            bf.Serialize(fs, gameMeshObjects);
-            fs.Close();
+            using (FileStream fs = new FileStream($"{fileName}.dat", FileMode.Create, FileAccess.Write))
+            {
+                bf.Serialize(fs, gameMeshObjects);
 
-            FileStream fsInt = new FileStream($"{fileName}.dat", FileMode.Append, FileAccess.Write);
-            BinaryWriter bw = new BinaryWriter(fsInt);
-            bw.Write(gameManager.CurrentLevel);
-            fsInt.Close();
+            };
+
+            using (FileStream fsInt = new FileStream($"{fileName}.dat", FileMode.Append, FileAccess.Write))
+            {
+                BinaryWriter bw = new BinaryWriter(fsInt);
+                bw.Write(gameManager.CurrentLevel);
+            }
         }
         public void LoadLevel(string fileName, out int numberOfFruits, out int numberOfLevels)
         {
@@ -60,11 +63,14 @@ namespace _2DTileSimpleGame.GameLogic
             Stack<IGameObject> characters = new Stack<IGameObject>();
             Stack<IGameObject> fruits = new Stack<IGameObject>();
 
-            FileStream fs = new FileStream($"{fileName}.dat", FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            BinaryFormatter bf = new BinaryFormatter();
-            IGameObject[,,] gameMeshObjects = (IGameObject[,,])bf.Deserialize(fs);
-            numberOfLevels = br.Read();
+            IGameObject[,,] gameMeshObjects;
+            using (FileStream fs = new FileStream($"{fileName}.dat", FileMode.Open, FileAccess.Read))
+            {
+                BinaryReader br = new BinaryReader(fs);
+                BinaryFormatter bf = new BinaryFormatter();
+                gameMeshObjects = (IGameObject[,,])bf.Deserialize(fs);
+                numberOfLevels = br.Read();
+            };
 
             for (int i = 0; i < gameMeshObjects.GetLength(0); i++)
             {
@@ -98,7 +104,6 @@ namespace _2DTileSimpleGame.GameLogic
             {
                 Player = gameMesh[(int)item.Coordinates.X, (int)item.Coordinates.Y, (int)item.Coordinates.Z] = new GraphicsComponent(item, resourceManager, gameCanvas);
             }
-            fs.Close();
             SetGameGrid();
         }
 
