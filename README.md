@@ -1,7 +1,7 @@
 # 2DTileSimpleGame
 
 The application is a very basic 2D Tile game where the main goal is to collect every fruit in a level and then get to the portal.
-To not make it that simple, a bunch of enemies spawn with you, the more levels you reach, the more fruits and enemies spawn. 
+To not make it that simple, a bunch of enemies spawn against you, the more levels you reach, the more fruits and enemies spawn. 
 
 # What I Learned
 
