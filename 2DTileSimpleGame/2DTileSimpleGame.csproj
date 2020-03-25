@@ -1,0 +1,167 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_2DTileSimpleGame</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Menu\Resources\Buttons\**" />
+    <EmbeddedResource Remove="Menu\Resources\Buttons\**" />
+    <None Remove="Menu\Resources\Buttons\**" />
+    <Page Remove="Menu\Resources\Buttons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Game\Resources\Images\UI\BackButton.png" />
+    <None Remove="Game\Resources\Images\UI\ConfirmButton.png" />
+    <None Remove="Game\Resources\Images\UI\LoadGame.png" />
+    <None Remove="Game\Resources\Images\UI\pauseMenuBackground.png" />
+    <None Remove="Game\Resources\Images\UI\QuitToMenu.png" />
+    <None Remove="Game\Resources\Images\UI\Resume.png" />
+    <None Remove="Game\Resources\Images\UI\SaveGame.png" />
+    <None Remove="Game\Resources\Images\UI\SelectButton.png" />
+    <None Remove="Menu\Resources\Images\buttonBackground.png" />
+    <None Remove="Menu\Resources\Images\Buttons\back.png" />
+    <None Remove="Menu\Resources\Images\Buttons\LoadGame.png" />
+    <None Remove="Menu\Resources\Images\Buttons\QuitGame.png" />
+    <None Remove="Menu\Resources\Images\Buttons\SaveGame.png" />
+    <None Remove="Menu\Resources\Images\Buttons\SelectButton.png" />
+    <None Remove="Menu\Resources\Images\Buttons\Settings.png" />
+    <None Remove="Menu\Resources\Images\asdasd.mp4" />
+    <None Remove="Menu\Resources\Images\Background.png" />
+    <None Remove="Menu\Resources\Images\playGame.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Game\Resources\Images\Blocks\Dirt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Blocks\Edge.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Blocks\Finish.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Blocks\FinishLocked.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Blocks\FinishUnlocked.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Characters\Enemy1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Characters\Player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Blocks\Wall.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Blocks\Water.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Fruits\Apple.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Fruits\Banana.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Fruits\Pineapple.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\Fruits\Watermelone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\Images\UI\Heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\SoundEffects\EatFruitSound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\SoundEffects\Footsteps.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\SoundEffects\Music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\SoundEffects\OpenPortalSound.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Game\Resources\SoundEffects\Ouch.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Menu\Resources\Images\asdasd.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Game\Resources\Images\UI\BackButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\ConfirmButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\LoadGame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\PauseMenuBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\QuitToMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\Resume.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\SaveGame.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Game\Resources\Images\UI\SelectButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\buttonBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\Back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\LoadGame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\QuitGame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\SaveGame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\SelectButton.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\Settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu\Resources\Images\Buttons\PlayGame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
