@@ -13,6 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using static _2DTileSimpleGame.UserInterface.GameUI;
 
 namespace _2DTileSimpleGame.GameLogic
 {
@@ -21,6 +22,7 @@ namespace _2DTileSimpleGame.GameLogic
         public int CurrentLevel { get; set; } = 0;
         public int FruitsCounter { get; private set; } = 0;
         public IGraphicsComponent[,,] GameMesh { get; set; }
+        public event FruitCountChanged FruitCountChanged;
         private int numberOfEnemies = 2;
         private int numberOfFruits = 3;
         private readonly Canvas gameCanvas;
@@ -213,7 +215,7 @@ namespace _2DTileSimpleGame.GameLogic
             gameCanvas.Children.Remove(fruit.RectangleBody);
 
             FruitsCounter--;
-            gameUI.UpdateFruit();
+            OnFruitCountChanged();
         }
         private void LoadNewLevel(int numberOfFruits, int numberOfEnemies)
         {
@@ -271,6 +273,10 @@ namespace _2DTileSimpleGame.GameLogic
         public void SaveGame(string name)
         {
             levelCreator.SaveLevel(name);
+        }
+        public void OnFruitCountChanged()
+        {
+            FruitCountChanged?.Invoke(this, new EventArgs());
         }
     }
 }

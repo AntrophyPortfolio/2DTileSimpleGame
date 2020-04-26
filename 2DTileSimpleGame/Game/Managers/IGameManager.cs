@@ -1,4 +1,6 @@
 ﻿using _2DTileSimpleGame.Game.Manager;
+using System;
+using static _2DTileSimpleGame.UserInterface.GameUI;
 
 namespace _2DTileSimpleGame.Game
 {
@@ -13,6 +15,10 @@ namespace _2DTileSimpleGame.Game
         /// either 0 (floor) or 1 (item above the ground).
         /// </summary>
         IGraphicsComponent[,,] GameMesh { get; set; }
+        /// <summary>
+        /// Event that fires up when fruit is picked up.
+        /// </summary>
+        public event FruitCountChanged FruitCountChanged;
         /// <summary>
         /// Returns number of level the player is currently in.
         /// </summary>
