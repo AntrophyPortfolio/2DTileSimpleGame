@@ -20,10 +20,6 @@ namespace _2DTileSimpleGame.UserInterface
         /// <summary>
         /// Updates remaining fruit textblock.
         /// </summary>
-        void UpdateFruit();
-        /// <summary>
-        /// Updates current level textblock.
-        /// </summary>
         void UpdateLevel();
         /// <summary>
         /// Resets offset X of the hearts after new level creation.
@@ -37,6 +33,9 @@ namespace _2DTileSimpleGame.UserInterface
         /// Hides pause game menu when ESC pressed again.
         /// </summary>
         void HidePauseGameControls();
+        /// <summary>
+        /// Shows death message with button to go back to menu.
+        /// </summary>
         void ShowDeathMessage();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using _2DTileSimpleGame.Game;
 using _2DTileSimpleGame.Graphics;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ namespace _2DTileSimpleGame.UserInterface
 {
     class GameUI : IUserInterface
     {
+        public delegate void FruitCountChanged(object sender, EventArgs e);
         private readonly Canvas gameCanvas;
         private readonly ILives lives;
         private readonly IGameManager gameManager;
@@ -26,6 +28,7 @@ namespace _2DTileSimpleGame.UserInterface
             lives = new Lives(refResourceManager);
             gameManager = refGameManager;
             resourceManager = refResourceManager;
+            gameManager.FruitCountChanged += Fruit_CountChanged;
         }
         public void CreateUserInterface(int numberOfLives)
         {
@@ -306,7 +309,7 @@ namespace _2DTileSimpleGame.UserInterface
                 pauseControls.Visibility = Visibility.Hidden;
             }
         }
-        public void UpdateFruit()
+        private void Fruit_CountChanged(object sender, EventArgs e)
         {
             if (gameManager.FruitsCounter == 0)
             {
@@ -316,7 +319,7 @@ namespace _2DTileSimpleGame.UserInterface
             }
             else
             {
-                remainingFruitsText.Text = $"Collect {gameManager.FruitsCounter.ToString()} fruits";
+                remainingFruitsText.Text = $"Collect {gameManager.FruitsCounter} fruits";
             }
         }
         public void UpdateLevel()
